@@ -7,6 +7,9 @@
 	list-style: none;
 	scroll-behavior: smooth;
 }
+#ida a{
+	color: white;
+}
 :root{
 	--bg-color: #fff;
 	--text-color: #221314;
@@ -98,8 +101,7 @@ header{
 }
 .box{
 	max-width: 380px;
-	border: 2px black solid;
-	border-radius: 20px;
+	
 }
 .box-1{
     flex: 1;
@@ -267,6 +269,7 @@ header.sticky{
 .thum img{
 	width: 100%;
 	height: auto;
+	border-radius: 5% 5% 0 0;
 }
 .thum h3{
 	position: absolute;
@@ -338,9 +341,7 @@ header.sticky{
 	height: 500px;
 	object-fit: cover;
 	border-radius: 15px;
-	filter: brightness(80%);
-	transition: all .3s cubic-bezier(.495,.05,.55,.95);
-	will-change: filter;
+	
 }
 .col-content h5{
 	position: absolute;
@@ -402,11 +403,7 @@ header.sticky{
 	bottom: 30px;
 	letter-spacing: 2px;
 }
-.col-content img:hover{
-	filter: brightness(100%) hue-rotate(45deg);
-	transform: scale(1.04);
-	cursor: pointer;
-}
+
 .blog-content img:hover{
 	-webkit-filter: brightness(30%);
     -webkit-transition: all 1s ease;

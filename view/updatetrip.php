@@ -1,3 +1,17 @@
+<?php
+
+require_once '../controller/trips.controller.php';
+$idi = array(
+	'id' => $_GET['id']
+);
+if(isset($_POST['image'])){
+
+}
+$update = new ADD_trip();
+ $trips = $update->gettrip($idi);
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,19 +57,26 @@
             <div class="add">
                 <h2 style="color:white"> fill trip Info</h2>
             <div class="d-flex justify-content-center">
-            <?php
-require '../controller/trips.Controller.php';
+            
+<?php
+foreach( $trips as $trip ){
 ?>
+
+
             <form class="col-4" action="" method="post" autocomplete="off">
+			<input type="hidden" name="id" value="<?php echo $trip['id'] ?>">
               <label for="name" style="color:white">trip name : </label>
-              <input class="form-control"  type="text" name="nom" id = "name" required value=""> 
+              <input class="form-control"  type="text" name="nom" id = "name"  value="<?php echo $trip['nom'] ?>"> 
               <label for="username" style="color:white">price </label>
-              <input class="form-control"  type="text" name="prix" id = "username" required value=""> 
+              <input class="form-control"  type="text" name="prix" id = "username" value="<?php echo $trip['prix'] ?>"> 
               
               <label class="form-label" style="color:white" for="password">trip picture</label>
-              <input class="form-control"  type="file" name="photo" id = "password" required value=""> 
-               <button class="btn btn-primary" type="submit" name="add">add trip</button>
+              <input class="form-control"  type="file" name="photo" id = "password"  value="<?php echo $trip['photo'] ?>"> 
+               <button class="btn btn-primary" type="submit" name="update_trip">update</button>
             </form>
+			<?php 
+			}
+			?>
             </div>
             </div>
         

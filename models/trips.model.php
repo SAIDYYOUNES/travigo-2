@@ -7,13 +7,13 @@ class trip{
                                         VALUES( :nom , :prix , :photo )");
                                        
        
-    //    $db->bindParam(':id',$data['id']);
+    //    
        $db->bindParam(':nom',$data['nom']);
        $db->bindParam(':prix',$data['prix']);
        $db->bindParam(':photo',$data['photo']);
         $db->execute();
 }
-    static public function getAlltrip(){
+    static public function getAlltrips(){
         $db=Database::connect()->prepare("SELECT * FROM trips");
         $db->execute();
         $trips=$db->fetchAll();
@@ -25,12 +25,13 @@ class trip{
     }
     static public function getOnetrip($id){
         $db=Database::connect()->prepare("SELECT * FROM trips WHERE id = :id");
-        $db->bindParam(':id',$id);
+        
+        $db->bindParam(':id',$id['id']);
         $db->execute();
         $trips=$db->fetchAll();
         $db=NULL;
         
-       
+        
         
         return $trips;
     }
@@ -53,5 +54,7 @@ class trip{
         $db->execute();
     }
 }
-// $test = new trip();
-// $test ->getAlltrips();
+
+// $a =trip ::getOnetrip();
+
+// print_r(trip::getOnetrip());

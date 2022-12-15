@@ -2,16 +2,7 @@
 require_once '../controller/admin.controller.php';
 
 
-if(!isset($_SESSION)){
-	session_start();
-}
-if($_SESSION["username"] ?? false){
-	header('location:trips.php');
-}
-if(isset($_POST['login'])){
-	$admin= new login();
-	$admin->login();
-}
+
 ?>
 
 
@@ -37,7 +28,7 @@ if(isset($_POST['login'])){
 </head>
 <body>
 <header>
-  <a href="index.html">
+  <a href="index.php">
 		<img src="./img/11J-removebg-preview.png" alt="" width="49"
 		height="49"></a>
 		
@@ -53,14 +44,22 @@ if(isset($_POST['login'])){
     
             <div class="add">
                 <h2 style="color:white"> Log IN</h2>
+                <h2 style="color:white"> </h2>
             <div class="d-flex justify-content-center">
             <form class="col-4" action="" method="post" autocomplete="off">
+              <?php
+              if(isset($_GET['error'])){
+                ?>
+                 <label> <?php echo $_GET['error'];?></label>
+              <?php
+            }
+            ?>
               <label for="name" style="color:white">email : </label>
               <input class="form-control"  type="text" name="email" > 
               <label for="username" style="color:white">password </label>
               <input class="form-control"  type="password" name="password" > 
               
-              <button class="btn btn-primary" type="submit" name="submit">Log in</button>
+              <button class="btn btn-primary" type="submit" name="login">Log in</button>
             </form>
             </div>
             </div>
@@ -78,4 +77,3 @@ if(isset($_POST['login'])){
 </body>
 </html>
 
-</html>

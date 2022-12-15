@@ -2,16 +2,16 @@
     require_once '../database/db_connection.php';
     class admin{
         
-        static public function get_admin($data){
-            $email=$data['email'];
-            try{
-                $db=Database::connect()->prepare('SELECT * FROM trips WHERE email = :email');
-                $db->execute(array(':email'=>$email));
-                return $db->fetch(PDO::FETCH_OBJ);
+        static public function get_admin($email){
+            
+            
+                $db=Database::connect()->prepare("SELECT * FROM admin WHERE email = :email");
+                $db->bindParam(':email',$email);
+        $db->execute();
+        $admin=$db->fetchAll();
+                return $admin;
 
-            }catch(PDOException $e){
-                return 'error ' . $e->getMessage();
-            };
+            
 
         }
     }

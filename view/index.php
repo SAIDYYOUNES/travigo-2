@@ -1,14 +1,11 @@
 
-
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Travigo - Travel for everyone</title>
-	<link rel="stylesheet" type="text/css" href="./css/tours.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+	<link rel="stylesheet" type="text/css" href="./css/tours.css?=<?php time() ?>">
 	<link rel="stylesheet"
   href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
@@ -20,13 +17,14 @@
 <body>
 	<!--header--->
 	<header>
-		<img src="./img/11J-removebg-preview.png" alt="enjoy" width="49"
-		height="49">
+	<a href="index.php">
+    <img src="./img/11J-removebg-preview.png" alt="" width="49">
+    </a>
 		<div class="bx bx-menu" id="menu-icon"></div>
 
 		<ul class="navbar">
-			<li><a href="index.html">Home</a></li>
-			<li><a href="tour.html">Tours</a></li>
+			<li><a href="index.php">Home</a></li>
+			<li><a href="tours.php">Tours</a></li>
 			<li><a href="about.html">About</a></li>
 			<li><a href="contact.html">Contact Us</a></li>
 		</ul>
@@ -105,7 +103,7 @@
 
 			<div class="box">
 				<div class="thum">
-					<img src="img/img2.png" alt="travigo">
+					<img src="img/img2.png">
 					<h3>$499</h3>
 				</div>
 
@@ -126,7 +124,7 @@
 
 			<div class="box">
 				<div class="thum">
-					<img src="img/img3.png" alt="holidays">
+					<img src="img/img3.png">
 					<h3>$499</h3>
 				</div>
 
@@ -156,37 +154,37 @@
 
 		<div class="destination-content">
 			<div class="col-content">
-				<img src="img/img-1.jpg" alt="travel">
+				<img src="img/img-1.jpg">
 				<h5>Machu Picchu</h5>
 				<p>PERU</p>
 			</div>
 
 			<div class="col-content">
-				<img src="img/img-2.jpg" alt="trip">
+				<img src="img/img-2.jpg">
 				<h5>Machu Picchu</h5>
 				<p>PERU</p>
 			</div>
 
 			<div class="col-content">
-				<img src="img/img-3.jpg" alt="nature" >
+				<img src="img/img-3.jpg">
 				<h5>Machu Picchu</h5>
 				<p>PERU</p>
 			</div>
 
 			<div class="col-content">
-				<img src="img/img-4.jpg" alt="beach" >
+				<img src="img/img-4.jpg">
 				<h5>Machu Picchu</h5>
 				<p>PERU</p>
 			</div>
 
 			<div class="col-content">
-				<img src="img/img-5.jpg" alt="montagnes">
+				<img src="img/img-5.jpg">
 				<h5>Machu Picchu</h5>
 				<p>PERU</p>
 			</div>
 
 			<div class="col-content">
-				<img src="img/img-6.jpg" alt="amour">
+				<img src="img/img-6.jpg">
 				<h5>Machu Picchu</h5>
 				<p>PERU</p>
 			</div>

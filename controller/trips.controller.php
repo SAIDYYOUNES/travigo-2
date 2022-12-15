@@ -3,64 +3,73 @@
 // use post as GlobalPost;
 
 require_once '../models/trips.model.php';
-    class ADD_trip{
+     class ADD_trip{
+        
         
         public function add_trip(){
              $data = array(
-                // 'username' => $_SESSION['username'],
-                // 'title'=>$_POST['title'],
+               
                 'nom'=>$_POST['nom'],
                 'prix'=>$_POST['prix'],
                 'photo'=>$_POST['photo'],
             );
+            
             $result=trip::addtrip($data);
         }
         public function gettrips(){
             return trip::getAlltrips();
-            header('location:trips.php');
+            header('location:tours.php');
         }
-        public function gettrip(){
-            $id =array('id'=> $_trip['id']);
-            return trip::getOnetrip($id);
-            header('location:trip.php');
+        public function gettrip($id){
+            
+            
+            
+            $trips = trip::getOnetrip($id);
+            return $trips;
+            header('location:updatetrip.php');
+            
         }
         
         public function delete_trip(){
-            $data = array(
+            $id = array(
                 'id' => $_POST['id']
             );
-            trip::delete_trip($data);
-            header('location:trip.php');
+            trip::delete_trip($id);
+            header('location:Dashbord.php');
         }
         public function update_trip(){
             $data_update = array(
-                // 'username' => $_SESSION['username'],
-                // 'title'=>$_POST['title'],
+                'id'=>$_POST['id'],
                 'nom'=>$_POST['nom'],
                 'prix'=>$_POST['prix'],
                 'photo'=>$_POST['photo'],
             );
             $result=trip::update_trip($data_update);
-            // print_r();
-            header('location:trip.php');
+            
+            header('location:Dashbord.php');
         }
     }
     $data = new ADD_trip();
 $new_trips = $data->gettrips();
 
 
+
+
 if (isset($_POST['add'])) {
     $trip = new ADD_trip();
     $trip->add_trip();
+    header('location:Dashbord.php');
 
     
 }
 if (isset($_POST['delete'])) {
     $delete = new ADD_trip();
     $delete->delete_trip();
+    header('location:Dashbord.php');
+
 }
-if (isset($_POST['update'])) {
+
+if (isset($_POST['update_trip'])) {
     $update = new ADD_trip();
     $update->update_trip();
 }
-
